@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
 import Home from "./components/Sections/Home/Home";
+import Products from "./components/Sections/Products/Products";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/products" element={} /> */}
+            <Route path="/products" element={<Products />} />
             {/* <Route path="/contact" element={} /> */}
 
             {/* <Route path="/*" element={<ErrorPage />} /> */}
