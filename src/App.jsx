@@ -5,6 +5,7 @@ import { Box } from "@mui/material";
 import Home from "./components/Sections/Home/Home";
 import Products from "./components/Sections/Products/Products";
 import Contact from "./components/Sections/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             {/* <Route path="/*" element={<ErrorPage />} /> */}
           </Routes>
         </Box>
+        <Footer />
       </BrowserRouter>
     </>
   );
