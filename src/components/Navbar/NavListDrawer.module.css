@@ -1,12 +1,11 @@
 .inactive {
-  color: #565267;
+  color: black;
 }
 
 .active {
-  color: #590e24;
+  color: #da533d;
 }
-
-.inactive,
-.active {
+.active,
+.inactive {
   text-decoration: none;
 }

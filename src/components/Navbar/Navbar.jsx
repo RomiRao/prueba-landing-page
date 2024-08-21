@@ -7,41 +7,40 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  Box,
+  Typography,
 } from "@mui/material";
-import LocalPizzaIcon from "@mui/icons-material/LocalPizza";
+import RamenDiningIcon from "@mui/icons-material/RamenDining";
 import MenuIcon from "@mui/icons-material/Menu";
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import { useState } from "react";
 import NavListDrawer from "./NavListDrawer";
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
-const navLinks = ["Home", "Products", "Contact"];
+const navLinks = ["Home", "Menu", "Contact"];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <AppBar
-        sx={{ bgcolor: "black", boxShadow: "none" }}
-        position="static"
-        elevation={0}
-      >
+      <AppBar sx={{ bgcolor: "transparent" }} position="static" elevation={0}>
         <Toolbar
           sx={{
-            justifyContent: {
-              xs: "space-between",
-              sm: "flex-start",
-            },
+            justifyContent: "space-between",
           }}
         >
-          <LocalPizzaIcon fontSize="2em" style={{ marginRight: "20px" }} />
+          <Box display="flex" alignItems="center" color="black">
+            <RamenDiningIcon sx={{ marginRight: "20px", fontSize: "2em" }} />
+            <Typography>Mugiwaras</Typography>
+          </Box>
           <List
             sx={{
               display: { xs: "none", sm: "flex" },
               padding: "0px",
             }}
-            id="sidebar"
           >
             {navLinks.map((link) => (
               <NavLink
@@ -62,6 +61,12 @@ export default function Navbar() {
                 </ListItem>
               </NavLink>
             ))}
+            <IconButton>
+              <InstagramIcon />
+            </IconButton>
+            <IconButton>
+              <FacebookRoundedIcon />
+            </IconButton>
           </List>
 
           <IconButton
