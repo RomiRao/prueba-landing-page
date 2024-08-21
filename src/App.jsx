@@ -2,6 +2,7 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
+import Home from "./components/Sections/Home/Home";
 
 function App() {
   return (
@@ -11,11 +12,11 @@ function App() {
           height="100vh"
           display="flex"
           flexDirection="column"
-          justifyContent="space-between"
+          // justifyContent="space-between"
         >
           <Navbar />
           <Routes>
-            {/* <Route path="/" element={<Home />} /> */}
+            <Route path="/" element={<Home />} />
             {/* <Route path="/products" element={} /> */}
             {/* <Route path="/contact" element={} /> */}
 
