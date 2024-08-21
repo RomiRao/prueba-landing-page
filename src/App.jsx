@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
 import Home from "./components/Sections/Home/Home";
 import Products from "./components/Sections/Products/Products";
+import Contact from "./components/Sections/Contact/Contact";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
-            {/* <Route path="/contact" element={} /> */}
+            <Route path="/contact" element={<Contact />} />
 
             {/* <Route path="/*" element={<ErrorPage />} /> */}
           </Routes>
