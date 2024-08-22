@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <>
       <AppBar
-        sx={{ bgcolor: "transparent", paddingX: 5, paddingY: 1 }}
+        sx={{ bgcolor: "transparent", paddingX: 7, paddingY: 1 }}
         position="static"
         elevation={0}
       >

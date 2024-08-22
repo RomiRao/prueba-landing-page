@@ -10,7 +10,7 @@ export default function Home() {
         paddingX: 3,
         justifyContent: "space-around",
         flexWrap: "wrap",
-        paddingY: 7,
+        paddingY: 2,
       }}
     >
       <Box marginTop={7} marginBottom={15}>

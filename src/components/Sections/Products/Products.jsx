@@ -19,8 +19,8 @@ export default function Products() {
           component="h2"
           marginY={4}
           marginRight={2}
-          fontSize="2em"
-          fontWeight={500}
+          fontSize="2.5em"
+          fontWeight={600}
           sx={{ color: "#222222" }}
         >
           Menu
