@@ -206,6 +206,10 @@ export default function Contact() {
               borderRadius: 50,
               mt: 2,
               bgcolor: "#DA533D",
+              "&:hover": {
+                bgcolor: "#a34028",
+                boxShadow: "0px 0px 24px rgba(218,83,61,0.50)",
+              },
             }}
           >
             Send

@@ -49,7 +49,12 @@ export default function Home() {
             boxShadow: "0px 0px 24px rgba(218,83,61,0.50)",
             textTransform: "capitalize",
             fontWeight: 300,
+            "&:hover": {
+              bgcolor: "#a34028",
+              boxShadow: "0px 0px 24px rgba(218,83,61,0.50)",
+            },
           }}
+          to={"/menu"}
         >
           Explore our menu
         </Button>
@@ -62,7 +67,11 @@ export default function Home() {
             paddingX: 2.5,
             textTransform: "capitalize",
             fontWeight: 400,
+            "&:hover": {
+              bgcolor: "rgba(244, 162, 158, 0.2)",
+            },
           }}
+          to={"/contact"}
         >
           Contact us
         </Button>
