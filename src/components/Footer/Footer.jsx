@@ -16,12 +16,13 @@ export default function Footer() {
       justifyContent="space-between"
       alignItems="center"
       marginTop={5}
-      paddingX={8}
+      paddingX={{ xs: 2, sm: 8 }}
       paddingY={4}
       bgcolor="#da533d"
       color="white"
+      flexWrap="wrap"
     >
-      <Box>
+      <Box marginBottom={3}>
         <Box display="flex" alignItems="center" padding={0.5}>
           <RamenDiningIcon sx={{ marginRight: "12px", fontSize: "2em" }} />
           <Typography sx={{ fontWeight: 500 }}>Mugiwaras</Typography>
@@ -33,9 +34,9 @@ export default function Footer() {
           <FacebookRoundedIcon sx={{ color: "white" }} />
         </IconButton>
       </Box>
-      <Box display="flex" flexWrap="wrap" maxWidth={500}>
+      <Box display="flex" flexWrap="wrap" maxWidth={400}>
         {data.map((item) => (
-          <Box key={item.title} marginY={1} marginX={3}>
+          <Box key={item.title} marginY={1} marginRight={3}>
             <Typography sx={{ fontWeight: 500 }}>{item.title}</Typography>
             <Typography sx={{ fontWeight: 200 }}>{item.des}</Typography>
           </Box>
