@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import image from "../../../assets/ramen2.png";
 import MenuBookRoundedIcon from "@mui/icons-material/MenuBookRounded";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -37,44 +38,48 @@ export default function Home() {
           Our menu offers a variety of traditional ramen dishes, creating a
           unique and flavorful dining experience.
         </Typography>
-        <Button
-          variant="contained"
-          startIcon={<MenuBookRoundedIcon />}
-          sx={{
-            marginRight: 3,
-            borderRadius: 50,
-            paddingY: 1.5,
-            paddingX: 2.5,
-            bgcolor: "#da533d",
-            boxShadow: "0px 0px 24px rgba(218,83,61,0.50)",
-            textTransform: "capitalize",
-            fontWeight: 300,
-            "&:hover": {
-              bgcolor: "#a34028",
+        <Link to="/menu" style={{ textDecoration: "none" }}>
+          {" "}
+          {/* Cambia el botón a Link */}
+          <Button
+            variant="contained"
+            startIcon={<MenuBookRoundedIcon />}
+            sx={{
+              marginRight: 3,
+              borderRadius: 50,
+              paddingY: 1.5,
+              paddingX: 2.5,
+              bgcolor: "#da533d",
               boxShadow: "0px 0px 24px rgba(218,83,61,0.50)",
-            },
-          }}
-          to={"/menu"}
-        >
-          Explore our menu
-        </Button>
-        <Button
-          sx={{
-            color: "#da533d",
-            marginRight: 3,
-            borderRadius: 50,
-            paddingY: 1.5,
-            paddingX: 2.5,
-            textTransform: "capitalize",
-            fontWeight: 400,
-            "&:hover": {
-              bgcolor: "rgba(244, 162, 158, 0.2)",
-            },
-          }}
-          to={"/contact"}
-        >
-          Contact us
-        </Button>
+              textTransform: "capitalize",
+              fontWeight: 300,
+              "&:hover": {
+                bgcolor: "#a34028",
+                boxShadow: "0px 0px 24px rgba(218,83,61,0.50)",
+              },
+            }}
+          >
+            Explore our menu
+          </Button>
+        </Link>
+        <Link to="/contact" style={{ textDecoration: "none" }}>
+          <Button
+            sx={{
+              color: "#da533d",
+              marginRight: 3,
+              borderRadius: 50,
+              paddingY: 1.5,
+              paddingX: 2.5,
+              textTransform: "capitalize",
+              fontWeight: 400,
+              "&:hover": {
+                bgcolor: "rgba(244, 162, 158, 0.2)",
+              },
+            }}
+          >
+            Contact us
+          </Button>
+        </Link>
       </Box>
       <Box
         component="img"
