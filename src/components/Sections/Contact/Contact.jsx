@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Box,
   Button,
@@ -11,17 +12,71 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-
-// ICONS
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import MarkunreadIcon from "@mui/icons-material/Markunread";
 import BusinessIcon from "@mui/icons-material/Business";
 
-//We will pretend there is a validation with Formik :D
-
 export default function Contact() {
+  const [formValues, setFormValues] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (event) => {
+    const { id, value } = event.target;
+    setFormValues({
+      ...formValues,
+      [id]: value,
+    });
+  };
+
+  const validate = () => {
+    let isValid = true;
+    const newErrors = {};
+
+    if (!formValues.firstName) {
+      newErrors.firstName = "First name is required";
+      isValid = false;
+    }
+    if (!formValues.lastName) {
+      newErrors.lastName = "Last name is required";
+      isValid = false;
+    }
+    if (!formValues.email) {
+      newErrors.email = "Email is required";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formValues.email)) {
+      newErrors.email = "Email is invalid";
+      isValid = false;
+    }
+    if (!formValues.message) {
+      newErrors.message = "Message is required";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (validate()) {
+      // Handle form submission
+      console.log("Form submitted:", formValues);
+    }
+  };
+
   return (
     <Container sx={{ marginTop: 5, marginBottom: 15, paddingX: 5 }}>
       <Typography
@@ -38,7 +93,7 @@ export default function Contact() {
         display="flex"
         justifyContent="space-between"
         flexDirection={{ xs: "column", md: "row" }}
-        gap={2} // Add gap between items
+        gap={2}
       >
         <List
           component="nav"
@@ -81,52 +136,37 @@ export default function Contact() {
           component="form"
           noValidate
           autoComplete="off"
+          onSubmit={handleSubmit}
         >
           <Box
             display="flex"
             flexDirection={{ xs: "column", sm: "row" }}
-            gap={2} // Add gap between name and last name fields
+            gap={2}
           >
             <Box flex={1}>
               <FormLabel>Name</FormLabel>
               <TextField
-                id="first-name"
+                id="firstName"
                 placeholder="John"
                 variant="outlined"
                 fullWidth
-                required
-                sx={{
-                  bgcolor: "rgba(218, 83, 61, 0.07)",
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderColor: "rgba(218, 83, 61, 0.5)",
-                    },
-                    "&:hover fieldset": {
-                      borderColor: "rgba(218, 83, 61, 0.7)",
-                    },
-                  },
-                }}
+                value={formValues.firstName}
+                onChange={handleChange}
+                error={Boolean(errors.firstName)}
+                helperText={errors.firstName}
               />
             </Box>
             <Box flex={1}>
               <FormLabel>Last Name</FormLabel>
               <TextField
-                id="last-name"
+                id="lastName"
                 placeholder="Smith"
                 variant="outlined"
                 fullWidth
-                required
-                sx={{
-                  bgcolor: "rgba(218, 83, 61, 0.07)",
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderColor: "rgba(218, 83, 61, 0.5)",
-                    },
-                    "&:hover fieldset": {
-                      borderColor: "rgba(218, 83, 61, 0.7)",
-                    },
-                  },
-                }}
+                value={formValues.lastName}
+                onChange={handleChange}
+                error={Boolean(errors.lastName)}
+                helperText={errors.lastName}
               />
             </Box>
           </Box>
@@ -137,18 +177,10 @@ export default function Contact() {
               placeholder="example@gmail.com"
               variant="outlined"
               fullWidth
-              required
-              sx={{
-                bgcolor: "rgba(218, 83, 61, 0.07)",
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "rgba(218, 83, 61, 0.5)",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "rgba(218, 83, 61, 0.7)",
-                  },
-                },
-              }}
+              value={formValues.email}
+              onChange={handleChange}
+              error={Boolean(errors.email)}
+              helperText={errors.email}
             />
           </Box>
           <Box mb={2}>
@@ -160,21 +192,14 @@ export default function Contact() {
               multiline
               rows={4}
               fullWidth
-              required
-              sx={{
-                bgcolor: "rgba(218, 83, 61, 0.07)",
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "rgba(218, 83, 61, 0.5)",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "rgba(218, 83, 61, 0.7)",
-                  },
-                },
-              }}
+              value={formValues.message}
+              onChange={handleChange}
+              error={Boolean(errors.message)}
+              helperText={errors.message}
             />
           </Box>
           <Button
+            type="submit"
             variant="contained"
             sx={{
               maxWidth: 100,
