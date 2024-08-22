@@ -1,37 +1,46 @@
-import { Box, Typography, IconButton } from "@mui/material";
+import { Box, Typography, IconButton, Grid } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import EmailIcon from "@mui/icons-material/Email";
+import RamenDiningIcon from "@mui/icons-material/RamenDining";
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+
+const data = [
+  { title: "Email", des: "mugiwaras@email.com" },
+  { title: "Adress", des: "False streed 123" },
+  { title: "Phone", des: "351-751-4846" },
+];
 
 export default function Footer() {
   return (
-    <Box>
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        marginY={5}
-      >
-        <Box>
-          <Typography>Lunes a Sabados 12 a 15 y 20 a 23.</Typography>
-          <Typography>3516852613</Typography>
-          <Typography>Duarte Quiroz 399. Cordoba</Typography>
+    <Box
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      marginTop={5}
+      paddingX={8}
+      paddingY={4}
+      bgcolor="#da533d"
+      color="white"
+    >
+      <Box>
+        <Box display="flex" alignItems="center" padding={0.5}>
+          <RamenDiningIcon sx={{ marginRight: "12px", fontSize: "2em" }} />
+          <Typography sx={{ fontWeight: 500 }}>Mugiwaras</Typography>
         </Box>
-        <Box>
-          <IconButton aria-label="delete" color="primary">
-            <InstagramIcon />
-          </IconButton>
-          <IconButton aria-label="delete" color="primary">
-            <WhatsAppIcon />
-          </IconButton>
-          <IconButton aria-label="delete" color="primary">
-            <EmailIcon />
-          </IconButton>
-        </Box>
+        <IconButton aria-label="delete">
+          <InstagramIcon sx={{ color: "white" }} />
+        </IconButton>
+        <IconButton aria-label="delete">
+          <FacebookRoundedIcon sx={{ color: "white" }} />
+        </IconButton>
       </Box>
-      <Typography textAlign="center">
-        Disclaimer: This is only a test project for interview.
-      </Typography>
+      <Box display="flex" flexWrap="wrap" maxWidth={500}>
+        {data.map((item) => (
+          <Box key={item.title} marginY={1} marginX={3}>
+            <Typography sx={{ fontWeight: 500 }}>{item.title}</Typography>
+            <Typography sx={{ fontWeight: 200 }}>{item.des}</Typography>
+          </Box>
+        ))}
+      </Box>
     </Box>
   );
 }
