@@ -42,7 +42,7 @@ export default function Navbar() {
           </Box>
           <List
             sx={{
-              display: { xs: "none", sm: "flex" },
+              display: { xs: "none", md: "flex" },
               padding: "0px",
             }}
           >
@@ -76,7 +76,7 @@ export default function Navbar() {
           <IconButton
             onClick={() => setOpen(true)}
             sx={{
-              display: { xs: "flex", sm: "none" },
+              display: { xs: "flex", md: "none" },
             }}
           >
             <MenuIcon color="white" />
@@ -87,7 +87,7 @@ export default function Navbar() {
         anchor="right"
         open={open}
         onClick={() => setOpen(false)}
-        sx={{ display: { xs: "flex", sm: "none" } }}
+        sx={{ display: { xs: "flex", md: "none" } }}
       >
         <NavListDrawer setOpen={setOpen} navLinks={navLinks} />
       </Drawer>

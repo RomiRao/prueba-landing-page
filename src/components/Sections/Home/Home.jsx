@@ -4,12 +4,23 @@ import MenuBookRoundedIcon from "@mui/icons-material/MenuBookRounded";
 
 export default function Home() {
   return (
-    <Box sx={{ display: "flex", paddingX: 12, justifyContent: "space-around" }}>
-      <Box marginTop={7}>
+    <Box
+      sx={{
+        display: "flex",
+        paddingX: 3,
+        justifyContent: "space-around",
+        flexWrap: "wrap",
+        paddingY: 7,
+      }}
+    >
+      <Box marginTop={7} marginBottom={15}>
         <Typography
-          variant="h2"
           component="h1"
-          sx={{ fontWeight: 500, color: "#444444" }}
+          sx={{
+            fontWeight: 500,
+            color: "#444444",
+            fontSize: { xs: "50px", sm: "4em" },
+          }}
         >
           Mugiwaras
         </Typography>
@@ -58,6 +69,7 @@ export default function Home() {
       </Box>
       <Box
         component="img"
+        width="100%"
         sx={{
           maxWidth: "600px",
           maxHeight: "600px",
