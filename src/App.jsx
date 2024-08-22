@@ -6,7 +6,6 @@ import Home from "./components/Sections/Home/Home";
 import Products from "./components/Sections/Products/Products";
 import Contact from "./components/Sections/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import "./assets/css/fonts.css";
 
 function App() {
   return (

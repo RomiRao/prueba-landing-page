@@ -1,27 +1,72 @@
-import { Button, Container, Divider, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import image from "../../../assets/ramen2.png";
+import MenuBookRoundedIcon from "@mui/icons-material/MenuBookRounded";
 
 export default function Home() {
   return (
-    <>
-      <Container
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-          marginY: 15,
-        }}
-      >
-        <Typography variant="h1">Mugiwaras</Typography>
-        <Divider />
-        <Typography variant="body" maxWidth={600} marginY={5}>
-          We are a ramen restaurant that serves authentic Japanese cuisine in a
-          cozy, culturally infused setting. The menu offers a variety of
-          traditional ramen dishes, creating a unique and flavorful dining
-          experience.
+    <Box sx={{ display: "flex", paddingX: 12, justifyContent: "space-around" }}>
+      <Box marginTop={7}>
+        <Typography
+          variant="h2"
+          component="h1"
+          sx={{ fontWeight: 500, color: "#444444" }}
+        >
+          Mugiwaras
         </Typography>
-        <Button sx={{ display: "block" }}> Our Menu</Button>
-      </Container>
-    </>
+
+        <Typography maxWidth={450} marginY={3} sx={{ color: "#222222" }}>
+          We are a{" "}
+          <Typography component="span" sx={{ color: "#da533d" }}>
+            ramen restaurant
+          </Typography>{" "}
+          that serves authentic Japanese cuisine in a cozy, culturally infused
+          setting.
+        </Typography>
+        <Typography maxWidth={450} marginY={3} sx={{ color: "#222222" }}>
+          Our menu offers a variety of traditional ramen dishes, creating a
+          unique and flavorful dining experience.
+        </Typography>
+        <Button
+          variant="contained"
+          startIcon={<MenuBookRoundedIcon />}
+          sx={{
+            marginRight: 3,
+            borderRadius: 50,
+            paddingY: 1.5,
+            paddingX: 2.5,
+            bgcolor: "#da533d",
+            boxShadow: "0px 0px 24px rgba(218,83,61,0.50)",
+            textTransform: "capitalize",
+            fontWeight: 300,
+          }}
+        >
+          Explore our menu
+        </Button>
+        <Button
+          sx={{
+            color: "#da533d",
+            marginRight: 3,
+            borderRadius: 50,
+            paddingY: 1.5,
+            paddingX: 2.5,
+            textTransform: "capitalize",
+            fontWeight: 400,
+          }}
+        >
+          Contact us
+        </Button>
+      </Box>
+      <Box
+        component="img"
+        sx={{
+          maxWidth: "600px",
+          maxHeight: "600px",
+          filter: "drop-shadow(0px 30px 72px rgba(0,0,0,0.50))",
+          marginBottom: 6,
+        }}
+        alt="ramen photo"
+        src={image}
+      />
+    </Box>
   );
 }
