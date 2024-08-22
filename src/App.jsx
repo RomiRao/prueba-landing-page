@@ -12,15 +12,14 @@ function App() {
     <>
       <BrowserRouter>
         <Box
-          height="100vh"
           display="flex"
           flexDirection="column"
-          // justifyContent="space-between"
+          justifyContent="space-between"
         >
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
+            <Route path="/menu" element={<Products />} />
             <Route path="/contact" element={<Contact />} />
 
             {/* <Route path="/*" element={<ErrorPage />} /> */}

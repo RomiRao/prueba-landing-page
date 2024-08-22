@@ -1,13 +1,13 @@
 .active {
-  color: white;
+  color: #da533d;
   text-decoration: none;
-  background-color: #590e24;
-  height: 100%;
+  font-weight: 500;
+  font-style: normal;
   transition: all 500ms;
 }
 
 .inactive {
-  color: rgb(168, 150, 150);
+  color: black;
   text-decoration: none;
 }
 

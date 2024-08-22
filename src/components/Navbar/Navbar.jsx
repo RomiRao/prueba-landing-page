@@ -7,15 +7,19 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  Box,
+  Typography,
 } from "@mui/material";
-import LocalPizzaIcon from "@mui/icons-material/LocalPizza";
+import RamenDiningIcon from "@mui/icons-material/RamenDining";
 import MenuIcon from "@mui/icons-material/Menu";
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import { useState } from "react";
 import NavListDrawer from "./NavListDrawer";
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
-const navLinks = ["Home", "Products", "Contact"];
+const navLinks = ["Home", "Menu", "Contact"];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -23,25 +27,24 @@ export default function Navbar() {
   return (
     <>
       <AppBar
-        sx={{ bgcolor: "black", boxShadow: "none" }}
+        sx={{ bgcolor: "transparent", paddingX: 7, paddingY: 1 }}
         position="static"
         elevation={0}
       >
         <Toolbar
           sx={{
-            justifyContent: {
-              xs: "space-between",
-              sm: "flex-start",
-            },
+            justifyContent: "space-between",
           }}
         >
-          <LocalPizzaIcon fontSize="2em" style={{ marginRight: "20px" }} />
+          <Box display="flex" alignItems="center" color="black">
+            <RamenDiningIcon sx={{ marginRight: "20px", fontSize: "2em" }} />
+            <Typography sx={{ fontWeight: 500 }}>Mugiwaras</Typography>
+          </Box>
           <List
             sx={{
-              display: { xs: "none", sm: "flex" },
+              display: { xs: "none", md: "flex" },
               padding: "0px",
             }}
-            id="sidebar"
           >
             {navLinks.map((link) => (
               <NavLink
@@ -62,12 +65,18 @@ export default function Navbar() {
                 </ListItem>
               </NavLink>
             ))}
+            <IconButton>
+              <InstagramIcon />
+            </IconButton>
+            <IconButton>
+              <FacebookRoundedIcon />
+            </IconButton>
           </List>
 
           <IconButton
             onClick={() => setOpen(true)}
             sx={{
-              display: { xs: "flex", sm: "none" },
+              display: { xs: "flex", md: "none" },
             }}
           >
             <MenuIcon color="white" />
@@ -78,7 +87,7 @@ export default function Navbar() {
         anchor="right"
         open={open}
         onClick={() => setOpen(false)}
-        sx={{ display: { xs: "flex", sm: "none" } }}
+        sx={{ display: { xs: "flex", md: "none" } }}
       >
         <NavListDrawer setOpen={setOpen} navLinks={navLinks} />
       </Drawer>

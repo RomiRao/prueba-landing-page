@@ -10,7 +10,7 @@ import styles from "./NavListDrawer.module.css";
 
 export default function NavListDrawer({ setOpen, navLinks }) {
   return (
-    <Box sx={{ width: 280 }} component="nav" bgcolor="black" height="100%">
+    <Box sx={{ width: 280 }} component="nav" height="100%">
       <List>
         {navLinks.map((link) => (
           <NavLink
@@ -27,6 +27,30 @@ export default function NavListDrawer({ setOpen, navLinks }) {
             </ListItem>
           </NavLink>
         ))}
+        <NavLink
+          to={`/`}
+          className={({ isActive }) =>
+            isActive ? `${styles.active}` : `${styles.inactive}`
+          }
+        >
+          <ListItem disablePadding>
+            <ListItemButton sx={{ height: "70px" }}>
+              <ListItemText primary="Instagram" />
+            </ListItemButton>
+          </ListItem>
+        </NavLink>
+        <NavLink
+          to={`/`}
+          className={({ isActive }) =>
+            isActive ? `${styles.active}` : `${styles.inactive}`
+          }
+        >
+          <ListItem disablePadding>
+            <ListItemButton sx={{ height: "70px" }}>
+              <ListItemText primary="Facebook" />
+            </ListItemButton>
+          </ListItem>
+        </NavLink>
       </List>
     </Box>
   );
