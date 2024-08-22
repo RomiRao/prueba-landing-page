@@ -26,7 +26,11 @@ export default function Navbar() {
 
   return (
     <>
-      <AppBar sx={{ bgcolor: "transparent" }} position="static" elevation={0}>
+      <AppBar
+        sx={{ bgcolor: "transparent", paddingX: 5, paddingY: 1 }}
+        position="static"
+        elevation={0}
+      >
         <Toolbar
           sx={{
             justifyContent: "space-between",
@@ -34,7 +38,7 @@ export default function Navbar() {
         >
           <Box display="flex" alignItems="center" color="black">
             <RamenDiningIcon sx={{ marginRight: "20px", fontSize: "2em" }} />
-            <Typography>Mugiwaras</Typography>
+            <Typography sx={{ fontWeight: 500 }}>Mugiwaras</Typography>
           </Box>
           <List
             sx={{
