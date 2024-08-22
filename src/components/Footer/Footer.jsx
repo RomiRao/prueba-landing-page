@@ -16,13 +16,13 @@ export default function Footer() {
       justifyContent="space-between"
       alignItems="center"
       marginTop={5}
-      paddingX={{ xs: 2, sm: 8 }}
+      paddingX={{ xs: 3, sm: 8 }}
       paddingY={4}
       bgcolor="#da533d"
       color="white"
       flexWrap="wrap"
     >
-      <Box marginBottom={3}>
+      <Box marginBottom={3} marginRight={3}>
         <Box display="flex" alignItems="center" padding={0.5}>
           <RamenDiningIcon sx={{ marginRight: "12px", fontSize: "2em" }} />
           <Typography sx={{ fontWeight: 500 }}>Mugiwaras</Typography>
