@@ -2,7 +2,7 @@
 
 ## ABOUT
 
-The objective of this project is to go make a presentation of a ramen restaurant located in Córdoba, Argentina.
+The objective of this project is to make a presentation of a ramen restaurant located in Córdoba, Argentina.
 
 <p align="center"> 
     <img src="./src/assets/examples/website.png" style="width: 60%;" alt="meme example"/>
@@ -48,7 +48,7 @@ This section is a list of the products that you can eat at the restaurant with e
 
 ### ✦ Contact section
 
-At this section you can find all the data to be able to contact the restaurant, and a form to write a small message that will send and email to de company.
+At this section you can find all the data to be able to contact the restaurant, and a form to write a small message that will send and email to de company. (As long as it's just a layout and example of my work, is just ilustrative)
 
 <p align="center"> 
    <img src="./src/assets/examples/contact.png" style="width: 90%;" alt="tasks example">
